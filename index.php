@@ -1,9 +1,17 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+include ('lib/Producto.php');
+
+$oProducto1 = new Producto();
+$oProducto1 ->nombre="Nuevo Producto1";
+$oProducto1 ->codigo="001";
+$oProducto2 = new Producto("Nuevo Producto2",0,"002");
+$oProducto3 = new Producto("Nuevo Producto3",0,"003");
+
+$oProductos[0]=$oProducto1;
+$oProductos[1]=$oProducto2;
+$oProductos[2]=$oProducto3;
+
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,7 +19,11 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+        foreach ($oProductos as $oPro)
+        {
+        echo $oPro->codigo." ".$oPro->nombre;
+        echo '<br>';
+        }
         ?>
     </body>
 </html>
